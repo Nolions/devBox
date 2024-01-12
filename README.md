@@ -35,3 +35,19 @@ docker-compose up -d paras
 // 停止所有服務
 docker-compose down
 ```
+
+## config
+
+### redis
+
+預設啟動redis是沒有密碼的
+
+如果需要設定redis連線時的密碼
+
+step1. 在`.env`檔案中的REDIS_PASS輸入要設定的密碼
+
+sep2. 取消docker-composer.yml中redis中command `#`註解
+
+```yml
+command: redis-server --requirepass ${REDIS_PASS}
+```
